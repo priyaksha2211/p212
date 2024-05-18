@@ -4,14 +4,13 @@ from tkinter import *
 from tkinter import ttk
 import ftplib
 import os
-import ntpath #This is used to extract filename from path
+import ntpath 
 import time
 from ftplib import FTP
 from tkinter import filedialog
 from pathlib import Path
 
 import winsound
-#Uncomment the beow two line to use pygame to allow mp3 files as well
 from playsound import playsound
 import pygame
 from pygame import mixer
@@ -100,22 +99,21 @@ def stop():
 
 def pause():
     global song_selected
-    # pygame
-    # mixer.init()
-    # mixer.music.load('shared_files/'+song_selected)
+    pygame
+    mixer.init()
+    mixer.music.load('shared_files/'+song_selected)
     pygame.mixer.music.pause()
     infoLabel.configure(text="Paused : " +song_selected)
 
 def resume():
     global song_selected
-    # pygame
-    # mixer.init()
-    # mixer.music.load('shared_files/'+song_selected)
+    pygame
+    mixer.init()
+    mixer.music.load('shared_files/'+song_selected)
     pygame.mixer.music.unpause()
     infoLabel.configure(text="Now Playing: " +song_selected)
    
         
-#Client GUI
 def musicWindow(): 
     global song_counter
     global filePathLabel
@@ -178,7 +176,6 @@ def setup():
 
     musicWindow()
 
-#Initiate Server Connection    
 setup()
 
 
